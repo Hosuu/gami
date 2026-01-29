@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 const stats = [
-	{ value: '20+', label: 'Lat doświadczenia' },
+	{ value: '15+', label: 'Lat doświadczenia' },
 	{ value: '500+', label: 'Zadowolonych klientów' },
 	{ value: '10M+', label: 'Wyprodukowanych kartonów' },
 	{ value: '100%', label: 'Ekologicznych materiałów' },
@@ -9,7 +9,7 @@ const stats = [
 
 export function AboutSection() {
 	return (
-		<section id='realizacje' className='py-24 bg-card'>
+		<section id='realizacje' className='py-24 bg-background'>
 			<div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
 				<div className='grid lg:grid-cols-2 gap-12 items-center'>
 					<div>
@@ -17,8 +17,8 @@ export function AboutSection() {
 							Łączymy tradycję z nowoczesną technologią
 						</h2>
 						<p className='mt-6 text-muted-foreground leading-relaxed'>
-							Gami-Pack to polska firma rodzinna z ponad 20-letnim doświadczeniem w produkcji
-							opakowań kartonowych. Nasz nowoczesny park maszynowy i wykwalifikowany zespół pozwalają
+							Gami-Pack to polska firma z ponad 15-letnim doświadczeniem w branży opakowań
+							kartonowych. Lata pracy na rynku pozwalają nam spełniać oczekiwania klientów i
 							realizować nawet najbardziej wymagające zamówienia.
 						</p>
 						<p className='mt-4 text-muted-foreground leading-relaxed'>

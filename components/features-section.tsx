@@ -22,9 +22,8 @@ const features = [
 	{
 		icon: Truck,
 		number: '4',
-		title: 'Szybka dostawa',
-		description:
-			'Sprawna logistyka i własna flota pojazdów zapewniają terminowe dostawy na terenie całego kraju.',
+		title: 'Dostawy',
+		description: 'Własny magazyn oraz flota pojazdów pozwalają nam na utrzymanie stanów i szybkie dostawy.',
 	},
 ]
 
@@ -52,7 +51,7 @@ export function FeaturesSection() {
 							</span>
 							<div className='relative'>
 								<div className='flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-primary mb-4'>
-									<feature.icon className='h-6 w-6' />
+									<feature.icon className='h-6 w-6' size={48} />
 								</div>
 								<h3 className='text-lg font-semibold text-foreground mb-2'>{feature.title}</h3>
 								<p className='text-sm text-muted-foreground leading-relaxed'>

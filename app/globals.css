@@ -158,3 +158,8 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+::selection {
+	background-color: oklch(0.8 0.19 36.7);
+	/* background-color: oklch(0.8 0.19 36.7); */
+}

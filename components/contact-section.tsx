@@ -25,7 +25,8 @@ const contactInfo = [
 		icon: MapPin,
 		label: 'Adres',
 		value: 'ul. Poniatowskiego 2, 41-253 Czeladź',
-		href: '#',
+		href: 'https://maps.app.goo.gl/4XiGABXZwgrWJZXe6',
+		action: 'Sprawdź na Google Maps',
 	},
 ]
 
@@ -46,7 +47,7 @@ export function ContactSection() {
 	}
 
 	return (
-		<section id='kontakt' className='py-24 bg-background'>
+		<section id='kontakt' className='py-24 bg-card'>
 			<div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
 				<div className='text-center max-w-2xl mx-auto mb-16'>
 					<h2 className='text-3xl sm:text-4xl font-bold text-foreground text-balance'>
@@ -57,7 +58,7 @@ export function ContactSection() {
 					</p>
 				</div>
 
-				<div className='grid lg:grid-cols-2 gap-12'>
+				<div className='grid lg:grid-cols-2 gap-12 items-stretch'>
 					<div>
 						<h3 className='text-xl font-semibold text-foreground mb-6'>Dane kontaktowe</h3>
 						<div className='space-y-6'>
@@ -65,6 +66,7 @@ export function ContactSection() {
 								<a
 									key={item.label}
 									href={item.href}
+									target='_blank'
 									className='flex items-start gap-4 p-4 rounded-lg border border-border bg-card hover:shadow-md transition-shadow'
 								>
 									<div className='flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary'>
@@ -73,6 +75,9 @@ export function ContactSection() {
 									<div>
 										<div className='text-sm text-muted-foreground'>{item.label}</div>
 										<div className='font-medium text-foreground'>{item.value}</div>
+										{item.action && (
+											<div className='font-medium text-sm text-primary'>{item.action}</div>
+										)}
 									</div>
 								</a>
 							))}
@@ -85,67 +90,78 @@ export function ContactSection() {
 						</div>
 					</div>
 
-					<div className='p-6 rounded-xl border border-border bg-card'>
+					<div className='flex flex-col'>
 						<h3 className='text-xl font-semibold text-foreground mb-6'>Wyślij zapytanie</h3>
-						<form onSubmit={handleSubmit} className='space-y-4'>
-							<div>
-								<label htmlFor='name' className='block text-sm font-medium text-foreground mb-1'>
-									Imię i nazwisko
-								</label>
-								<Input
-									id='name'
-									value={formData.name}
-									onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-									placeholder='Jan Kowalski'
-									required
-								/>
-							</div>
-							<div>
-								<label htmlFor='email' className='block text-sm font-medium text-foreground mb-1'>
-									Adres email
-								</label>
-								<Input
-									id='email'
-									type='email'
-									value={formData.email}
-									onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-									placeholder='jan@firma.pl'
-									required
-								/>
-							</div>
-							<div>
-								<label htmlFor='phone' className='block text-sm font-medium text-foreground mb-1'>
-									Telefon
-								</label>
-								<Input
-									id='phone'
-									type='tel'
-									value={formData.phone}
-									onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-									placeholder='+48 123 456 789'
-								/>
-							</div>
-							<div>
-								<label
-									htmlFor='message'
-									className='block text-sm font-medium text-foreground mb-1'
-								>
-									Wiadomość
-								</label>
-								<Textarea
-									id='message'
-									value={formData.message}
-									onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-									placeholder='Opisz swoje potrzeby...'
-									rows={4}
-									required
-								/>
-							</div>
-							<Button type='submit' className='w-full' size='lg'>
-								Wyślij wiadomość
-								<Send className='ml-2 h-4 w-4' />
-							</Button>
-						</form>
+						<div className='p-6 rounded-xl border border-border bg-card flex-1 flex flex-col'>
+							<form onSubmit={handleSubmit} className='space-y-4 flex flex-col flex-1'>
+								<div>
+									<label
+										htmlFor='name'
+										className='block text-sm font-medium text-foreground mb-1'
+									>
+										Imię i nazwisko
+									</label>
+									<Input
+										id='name'
+										value={formData.name}
+										onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+										placeholder='Jan Kowalski'
+										required
+									/>
+								</div>
+								<div>
+									<label
+										htmlFor='email'
+										className='block text-sm font-medium text-foreground mb-1'
+									>
+										Adres email
+									</label>
+									<Input
+										id='email'
+										type='email'
+										value={formData.email}
+										onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+										placeholder='jan@firma.pl'
+										required
+									/>
+								</div>
+								<div>
+									<label
+										htmlFor='phone'
+										className='block text-sm font-medium text-foreground mb-1'
+									>
+										Telefon
+									</label>
+									<Input
+										id='phone'
+										type='tel'
+										value={formData.phone}
+										onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+										placeholder='+48 123 456 789'
+									/>
+								</div>
+								<div className='flex flex-col flex-1'>
+									<label
+										htmlFor='message'
+										className='block text-sm font-medium text-foreground mb-1'
+									>
+										Wiadomość
+									</label>
+									<Textarea
+										id='message'
+										value={formData.message}
+										onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+										placeholder='Opisz swoje potrzeby...'
+										required
+										className='flex-1'
+									/>
+								</div>
+								<Button type='submit' className='w-full' size='lg'>
+									Wyślij wiadomość
+									<Send className='ml-2 h-4 w-4' />
+								</Button>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -11,7 +11,7 @@ export function HeroSection() {
 					src='/images/placeholder.png'
 					alt='Produkcja kartonów'
 					fill
-					className='object-cover'
+					className='object-cover select-none'
 					priority
 				/>
 				<div className='absolute inset-0 bg-foreground/60' />
@@ -19,14 +19,11 @@ export function HeroSection() {
 
 			<div className='relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-32'>
 				<div className='max-w-2xl'>
-					<p className='text-sm font-medium uppercase tracking-widest text-background/80 mb-4'>
-						Profesjonalny producent opakowań
-					</p>
 					<h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold text-background leading-tight text-balance'>
-						Ekologiczne opakowania kartonowe dla Twojego biznesu
+						Producent opakowań z tektury falistej
 					</h1>
 					<p className='mt-6 text-lg text-background/90 leading-relaxed max-w-xl'>
-						Tworzymy innowacyjne rozwiązania opakowaniowe, łącząc tradycję z nowoczesnością. Ponad 20
+						Tworzymy innowacyjne rozwiązania opakowaniowe, łącząc tradycję z nowoczesnością. Ponad 15
 						lat doświadczenia w branży kartonowej.
 					</p>
 					<div className='mt-10 flex flex-col sm:flex-row gap-4'>
