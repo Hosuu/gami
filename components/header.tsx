@@ -25,7 +25,7 @@ export function Header() {
 						<Image src={'logo.svg'} height={1453} width={277} alt='logo' />
 					</Link>
 
-					<nav className='hidden md:flex items-center gap-6'>
+					<nav className='hidden md:flex items-center gap-6 whitespace-nowrap px-4'>
 						{navItems.map((item) => (
 							<Link
 								key={item.href}

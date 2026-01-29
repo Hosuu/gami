@@ -67,7 +67,7 @@ export function ContactSection() {
 									key={item.label}
 									href={item.href}
 									target='_blank'
-									className='flex items-start gap-4 p-4 rounded-lg border border-border bg-card hover:shadow-md transition-shadow'
+									className='flex items-start gap-4 p-4 rounded-lg border border-border bg-card hover:shadow-md transition-shadow group'
 								>
 									<div className='flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary'>
 										<item.icon className='h-5 w-5' />
@@ -76,7 +76,9 @@ export function ContactSection() {
 										<div className='text-sm text-muted-foreground'>{item.label}</div>
 										<div className='font-medium text-foreground'>{item.value}</div>
 										{item.action && (
-											<div className='font-medium text-sm text-primary'>{item.action}</div>
+											<div className='font-medium text-sm text-primary group-hover:underline'>
+												{item.action}
+											</div>
 										)}
 									</div>
 								</a>

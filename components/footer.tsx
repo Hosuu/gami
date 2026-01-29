@@ -35,40 +35,27 @@ export function Footer() {
 	return (
 		<footer className='bg-primary text-primary-foreground'>
 			<div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12'>
-				<div className='grid grid-cols-1 md:grid-cols-5 gap-8'>
+				<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8'>
 					<div>
-						<span className='text-xl font-bold'>Gami-Pack</span>
-						<p className='mt-4 text-md  max-w-md leading-relaxed'>
-							ul. Poniatowskiego 2 <br />
-							41-253 Czeladź <br />
-							NIP 6252353072 <br />
-						</p>
+						<h3 className='text-xl font-bold mb-4'>Gami-Pack</h3>
+						<address className='not-italic'>
+							<ul className='space-y-1'>
+								<li>ul. Poniatowskiego 2</li>
+								<li>41-253 Czeladź</li>
+								<li className='pt-2'>NIP 6252353072</li>
+							</ul>
+						</address>
 					</div>
 
-					<div className='md:col-span-2'>
-						<h4 className='font-semibold mb-4'>Dane kontaktowe</h4>
-
-						<div className='grid md:grid-cols-2 grid-rows-2 text-md max-w-md leading-relaxed gap-4'>
-							{contactInfo.map((el) => (
-								<ul key={el.label} className='whitespace-nowrap'>
-									<li className='font-medium'> {el.label} </li>
-									<li>
-										tel: <a href={`tel:${el.tel}`}>{el.tel}</a>{' '}
-									</li>
-									<li>
-										email: <a href={`mailto:${el.email}`}>{el.email}</a>
-									</li>
-								</ul>
-							))}
-						</div>
-					</div>
-
-					<div>
-						<h4 className='font-semibold mb-4'>Firma</h4>
+					<div className='lg:order-4'>
+						<h3 className='text-xl font-bold mb-4'>Firma</h3>
 						<ul className='space-y-2'>
 							{footerLinks.map((link) => (
 								<li key={link.label}>
-									<Link href={link.href} className='text-sm'>
+									<Link
+										href={link.href}
+										className='inline-block hover:translate-x-1 transition-transform'
+									>
 										{link.label}
 									</Link>
 								</li>
@@ -76,8 +63,39 @@ export function Footer() {
 						</ul>
 					</div>
 
-					<div className='flex justify-start'>
-						<Image height={422} width={274} src={'/FSC_GAMI_W.svg'} alt='FSC' className='h-42' />
+					<div className='col-span-2 md:order-4 lg:order-3'>
+						<h3 className='text-xl font-bold mb-4'>Dane kontaktowe</h3>
+						<div className='grid grid-cols-2 leading-relaxed gap-6'>
+							{contactInfo.map((el) => (
+								<ul key={el.label}>
+									<li>
+										<span className='font-semibold whitespace-nowrap'>{el.label}</span>
+									</li>
+									<li>
+										<a href={`tel:${el.tel}`}>
+											<span className='text-primary-foreground/80'>tel: </span>
+											<span className='whitespace-nowrap'>{el.tel}</span>
+										</a>
+									</li>
+									<li>
+										<a href={`mailto:${el.email}`}>
+											<span className='text-primary-foreground/80'>email: </span>
+											<span className='whitespace-nowrap'>{el.email}</span>
+										</a>
+									</li>
+								</ul>
+							))}
+						</div>
+					</div>
+
+					<div className='h-48 md:h-64  col-span-2 md:col-span-1 md:row-span-2 md:order-3 self-center lg:order-5'>
+						<Image
+							height={422}
+							width={274}
+							src={'/FSC_GAMI_W.svg'}
+							alt='Certyfikat FSC'
+							className='h-full w-auto object-contain m-auto lg:ml-auto'
+						/>
 					</div>
 				</div>
 

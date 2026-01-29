@@ -40,7 +40,7 @@ export function AboutSection() {
 						</div>
 					</div>
 
-					<div className='relative aspect-[4/3] rounded-xl overflow-hidden'>
+					<div className='relative aspect-4/3 rounded-xl overflow-hidden'>
 						<Image
 							src='/images/placeholder.png'
 							alt='Zakład produkcyjny Gami-Pack'

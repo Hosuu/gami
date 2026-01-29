@@ -95,7 +95,7 @@ export function ProductsSection() {
 				</div>
 
 				<div className='mt-16 grid lg:grid-cols-2 gap-12 items-center'>
-					<div className='relative aspect-[4/3] rounded-xl overflow-hidden'>
+					<div className='relative aspect-4/3 rounded-xl overflow-hidden'>
 						<Image
 							src={prodImageUrl[lastProdId]}
 							alt='Produkty kartonowe'
@@ -128,11 +128,8 @@ export function ProductsSection() {
 
 						<Accordion
 							type='single'
-							collapsible
 							defaultValue='01'
-							className='max-w-lg'
 							onValueChange={(v) => {
-								console.log(v)
 								if (v !== '') setLastProdId(v)
 							}}
 						>
