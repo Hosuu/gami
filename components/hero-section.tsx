@@ -20,7 +20,7 @@ export function HeroSection() {
 					playsInline
 					className='absolute inset-0 z-0 h-full w-full object-cover object-center'
 				>
-					<source src='/bg.mp4' type='video/mp4' />
+					<source src='/bg-optimized.mp4' type='video/mp4' />
 				</video>
 
 				<div className='absolute inset-0 bg-foreground/60' />
