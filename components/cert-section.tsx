@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Zoom from 'react-medium-image-zoom'
 
 export function CertSection() {
 	return (
@@ -18,7 +19,9 @@ export function CertSection() {
 					</div>
 
 					<div className='flex justify-center'>
-						<Image src={'/cert.webp'} height={1000} width={300} alt='cert' />
+						<Zoom>
+							<Image src={'/cert.webp'} height={1000} width={300} alt='cert' />
+						</Zoom>
 					</div>
 				</div>
 			</div>
