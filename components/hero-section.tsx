@@ -1,19 +1,28 @@
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
 
 export function HeroSection() {
 	return (
 		<section className='relative min-h-screen flex items-center'>
-			<div className='absolute inset-0 z-0'>
-				<Image
+			<div className='absolute inset-0 z-0 overflow-hidden'>
+				{/* <Image
 					src='/images/placeholder.png'
 					alt='Produkcja kartonów'
 					fill
 					className='object-cover select-none'
 					priority
-				/>
+				/> */}
+				<video
+					autoPlay
+					loop
+					muted
+					playsInline
+					className='absolute inset-0 z-0 h-full w-full object-cover object-center'
+				>
+					<source src='/bg.mp4' type='video/mp4' />
+				</video>
+
 				<div className='absolute inset-0 bg-foreground/60' />
 			</div>
 
