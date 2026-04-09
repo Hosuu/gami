@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 const footerLinks = [
@@ -35,27 +34,27 @@ export function Footer() {
 	return (
 		<footer className='bg-primary text-primary-foreground'>
 			<div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12'>
-				<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8'>
-					<div>
-						<h3 className='text-xl font-bold mb-4'>Gami-Pack</h3>
+				<div className='grid grid-cols-4 lg:grid-cols-8 gap-8'>
+					<div className='col-span-3'>
+						<h3 className='text-xl font-bold mb-4'>Dane Firmowe</h3>
 						<address className='not-italic'>
 							<ul className='space-y-1'>
+								<li className='font-semibold whitespace-nowrap'>GAMI-PACK D. STACH SPÓŁKA KOMANDYTOWA</li>
+								<li className='text-sm text-muted italic pb-4'>dawniej P.P.H.U. GAMI PACK S.C. I. STACH, D. STACH</li>
 								<li>ul. Poniatowskiego 2</li>
 								<li>41-253 Czeladź</li>
 								<li className='pt-2'>NIP 6252353072</li>
+								<li className='pt-2'>KRS 0001234120</li>
 							</ul>
 						</address>
 					</div>
 
-					<div className='lg:order-4'>
+					<div className='lg:order-3'>
 						<h3 className='text-xl font-bold mb-4'>Firma</h3>
 						<ul className='space-y-2'>
 							{footerLinks.map((link) => (
 								<li key={link.label}>
-									<Link
-										href={link.href}
-										className='inline-block hover:translate-x-1 transition-transform'
-									>
+									<Link href={link.href} className='inline-block hover:translate-x-1 transition-transform'>
 										{link.label}
 									</Link>
 								</li>
@@ -63,7 +62,7 @@ export function Footer() {
 						</ul>
 					</div>
 
-					<div className='col-span-2 md:order-4 lg:order-3'>
+					<div className='col-span-4'>
 						<h3 className='text-xl font-bold mb-4'>Dane kontaktowe</h3>
 						<div className='grid grid-cols-2 leading-relaxed gap-6'>
 							{contactInfo.map((el) => (
@@ -87,23 +86,11 @@ export function Footer() {
 							))}
 						</div>
 					</div>
-
-					<div className='h-48 md:h-64  col-span-2 md:col-span-1 md:row-span-2 md:order-3 self-center lg:order-5'>
-						<Image
-							height={422}
-							width={274}
-							src={'/FSC_GAMI_W.svg'}
-							alt='Certyfikat FSC'
-							className='h-full w-auto object-contain m-auto lg:ml-auto'
-						/>
-					</div>
 				</div>
 
 				<div className='mt-12 pt-8 border-t border-primary-foreground/20'>
 					<div className='flex flex-col sm:flex-row justify-between items-center gap-4'>
-						<p className='text-sm '>
-							© {new Date().getFullYear()} Gami-Pack. Wszelkie prawa zastrzeżone.
-						</p>
+						<p className='text-sm '>© {new Date().getFullYear()} Gami-Pack. Wszelkie prawa zastrzeżone.</p>
 						<div className='flex gap-6'>
 							{/* <Link href='#' className='text-sm'>
 								Polityka prywatności
